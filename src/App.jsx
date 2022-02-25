@@ -27,9 +27,6 @@ function App() {
 
   }, [])
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
 
   const filteredPokemons = pokes.filter(pokemon => {
     return pokemon.name.toLowerCase().includes(search.toLowerCase());
@@ -42,7 +39,7 @@ function App() {
         <h1>Mi Poke App</h1>
         <SearchBox
           placeholder="Búsqueda Pokemon"
-          handleChange={handleChange}
+          onSearchChange={(e) => setSearch(e.target.value)}
         />
         <CardList pokes={filteredPokemons} />
       </header>

@@ -4,7 +4,7 @@ const URL_POKE = "https://pokeapi.co/api/v2/pokemon?limit=500";
 export async function getPokes(){
   let data = await fetch(URL_POKE);
   let pokes = await data.json();
-
+  console.log(pokes);
   return pokes.results;
 
 }
